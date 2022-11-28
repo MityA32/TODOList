@@ -31,6 +31,8 @@ class AddTaskViewController: UIViewController {
         textView.delegate = self
         textView.textColor = .lightGray
         textView.text = initialText
+        textView.layer.cornerRadius = 20
+        textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     

@@ -160,39 +160,53 @@
                                     <navigationItem title="Title" id="qqW-8e-5qv"/>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nlu-h6-Spi">
-                                <rect key="frame" x="16" y="76" width="361" height="156"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tS7-ec-Zrz">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="52"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="52" id="4Pd-j8-3CL"/>
-                                        </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Note" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZUt-9l-yvQ">
-                                        <rect key="frame" x="0.0" y="52" width="361" height="104"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="156" id="PGL-Gf-z54"/>
-                                </constraints>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tS7-ec-Zrz">
+                                <rect key="frame" x="19.666666666666657" y="159" width="353.66666666666674" height="117.33333333333331"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="IQd-uC-5QT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="rhE-hn-a3L"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Note" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZUt-9l-yvQ">
+                                <rect key="frame" x="19.666666666666657" y="326.33333333333331" width="353.66666666666674" height="156.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwu-7c-PJZ">
+                                <rect key="frame" x="43.666666666666664" y="304.33333333333331" width="32.999999999999993" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-1t-Yqx">
+                                <rect key="frame" x="43.666666666666664" y="137" width="29.999999999999993" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X6G-uz-Ei0"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="nlu-h6-Spi" firstAttribute="top" secondItem="qaE-hm-LZc" secondAttribute="bottom" constant="32" id="2pt-kI-sZw"/>
-                            <constraint firstItem="nlu-h6-Spi" firstAttribute="leading" secondItem="X6G-uz-Ei0" secondAttribute="leading" constant="16" id="4lC-QU-fe6"/>
-                            <constraint firstItem="nlu-h6-Spi" firstAttribute="trailing" secondItem="X6G-uz-Ei0" secondAttribute="trailing" constant="-16" id="Arn-l0-v9f"/>
+                            <constraint firstItem="ZUt-9l-yvQ" firstAttribute="top" secondItem="Lwu-7c-PJZ" secondAttribute="bottom" constant="4" id="32c-2k-24N"/>
+                            <constraint firstItem="X6G-uz-Ei0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xFb-1t-Yqx" secondAttribute="trailing" constant="120" id="AZB-Q6-0rI"/>
+                            <constraint firstItem="tS7-ec-Zrz" firstAttribute="top" secondItem="X6G-uz-Ei0" secondAttribute="top" constant="100" id="Dve-sG-DEg"/>
+                            <constraint firstItem="ZUt-9l-yvQ" firstAttribute="top" secondItem="tS7-ec-Zrz" secondAttribute="bottom" constant="50" id="FLw-iF-gOB"/>
+                            <constraint firstItem="tS7-ec-Zrz" firstAttribute="centerX" secondItem="X6G-uz-Ei0" secondAttribute="centerX" id="H4O-M1-5Yq"/>
+                            <constraint firstItem="ZUt-9l-yvQ" firstAttribute="width" secondItem="tS7-ec-Zrz" secondAttribute="width" id="LWp-m6-S0i"/>
+                            <constraint firstItem="xFb-1t-Yqx" firstAttribute="leading" secondItem="tS7-ec-Zrz" secondAttribute="leading" constant="24" id="N3n-Vo-tCp"/>
+                            <constraint firstItem="tS7-ec-Zrz" firstAttribute="top" secondItem="xFb-1t-Yqx" secondAttribute="bottom" constant="4" id="QFk-SK-Mml"/>
+                            <constraint firstItem="tS7-ec-Zrz" firstAttribute="width" secondItem="nil-0h-oBy" secondAttribute="width" multiplier="0.9" id="SG4-5Q-zjN"/>
+                            <constraint firstItem="ZUt-9l-yvQ" firstAttribute="centerX" secondItem="X6G-uz-Ei0" secondAttribute="centerX" id="exu-TA-JRg"/>
+                            <constraint firstItem="tS7-ec-Zrz" firstAttribute="height" secondItem="nil-0h-oBy" secondAttribute="height" multiplier="0.15" id="mDD-kR-jD3"/>
                             <constraint firstItem="qaE-hm-LZc" firstAttribute="trailing" secondItem="X6G-uz-Ei0" secondAttribute="trailing" id="n4T-LW-Hmi"/>
+                            <constraint firstItem="Lwu-7c-PJZ" firstAttribute="leading" secondItem="ZUt-9l-yvQ" secondAttribute="leading" constant="24" id="tCJ-Fa-gAa"/>
+                            <constraint firstItem="ZUt-9l-yvQ" firstAttribute="height" secondItem="nil-0h-oBy" secondAttribute="height" multiplier="0.2" id="tF7-Ts-6bF"/>
+                            <constraint firstItem="X6G-uz-Ei0" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Lwu-7c-PJZ" secondAttribute="trailing" constant="120" id="u07-Zl-OHY"/>
                             <constraint firstItem="qaE-hm-LZc" firstAttribute="top" secondItem="nil-0h-oBy" secondAttribute="top" id="wY6-Pa-v39"/>
                             <constraint firstItem="qaE-hm-LZc" firstAttribute="leading" secondItem="X6G-uz-Ei0" secondAttribute="leading" id="wzV-cL-PJy"/>
                         </constraints>
@@ -212,6 +226,9 @@
         <image name="circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

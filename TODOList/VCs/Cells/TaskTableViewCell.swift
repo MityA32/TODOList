@@ -44,7 +44,6 @@ class TaskTableViewCell: UITableViewCell {
 
     func configureTextView(textView: UITextView) {
         textView.delegate = self
-        
         textView.sizeToFit()
         textView.isScrollEnabled = false
     }
