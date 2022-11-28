@@ -15,7 +15,8 @@ final class CoreDataService {
         container.loadPersistentStores { _, error in
             //Handle error
         }
-        
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return container
     }()
     

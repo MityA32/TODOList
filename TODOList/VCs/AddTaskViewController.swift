@@ -10,7 +10,9 @@ import UIKit
 class AddTaskViewController: UIViewController {
 
     weak var delegate: AddTaskDelegate?
+   
     var placeholder = ""
+    var navigationTitle = ""
     
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var titleTextView: UITextView!
@@ -47,14 +49,8 @@ class AddTaskViewController: UIViewController {
             showAlert()
             return
         }
-        CoreDataService.shared.write {
-            CoreDataService.shared.create(Task.self) { [titleTextView, noteTextView] task in
-                task.title = titleTextView?.text
-                task.note = noteTextView?.text
-                task.dateOfCreation = Date.now
-                task.done = false
-            }
-        }
+        delegate?.saveNew(title: titleTextView.text, note: noteTextView.text, dateOfCreation: Date.now)
+        
         delegate?.reloadData()
         dismiss(animated: true)
     }
@@ -80,7 +76,7 @@ extension AddTaskViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {
             textView.text = ""
-            textView.textColor = .black
+            textView.textColor = .label
         }
     }
     
@@ -105,12 +101,8 @@ extension AddTaskViewController: UITextViewDelegate {
     
 }
 
-
-
-    
-
-
 protocol AddTaskDelegate: AnyObject {
+    func saveNew(title: String, note: String?, dateOfCreation: Date)
     func reloadData()
 }
 
