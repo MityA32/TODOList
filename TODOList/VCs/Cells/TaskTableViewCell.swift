@@ -15,7 +15,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet private weak var done: UIButton!
     
     var task: Task?
-    var callback: ((String) -> Void)?
+    var callback: ((Task?, String) -> Void)?
     
     @IBAction func done(_ sender: Any) {
         CoreDataService.shared.write { [task] in
@@ -39,7 +39,7 @@ class TaskTableViewCell: UITableViewCell {
         }
         
         date.text = "\(task.dateOfCreation?.getFormattedDate() ?? "Date()")"
-        done.setImage(UIImage(systemName: task.done ? "circle.fill" : "circle"), for: .normal)
+        done.setImage(UIImage(systemName: task.done ? "checkmark.circle.fill" : "circle"), for: .normal)
     }
 
     func configureTextView(textView: UITextView) {
@@ -89,14 +89,11 @@ extension TaskTableViewCell: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         placeholder = textView.text
-        callback?(placeholder)
+        callback?(task, placeholder)
     }
     
     func textView(_ textView: UITextView, willDismissEditMenuWith animator: UIEditMenuInteractionAnimating) {
         super.resignFirstResponder()
     }
-    
-    
-    
     
 }

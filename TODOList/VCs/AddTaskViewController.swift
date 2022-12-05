@@ -103,9 +103,6 @@ extension AddTaskViewController: UITextViewDelegate {
     
 }
 
-protocol AddTaskDelegate: AnyObject {
-    func saveNew(title: String, note: String?, dateOfCreation: Date)
-    func reloadData()
-}
+
 
 

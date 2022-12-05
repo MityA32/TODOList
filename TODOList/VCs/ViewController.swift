@@ -21,6 +21,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationsService.shared.addListener(self, for: "task") { [weak self]
+            task in
+            guard let task = task as? TaskFromNotification else { return }
+            self?.saveNew(title: task.title, note: task.note, dateOfCreation: Date.now)
+        }
         if parentTask == nil {
             _tasks.filter = { $0.parentTask == nil }
         }
@@ -53,7 +58,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if parentTask != nil {
-            print(subtasks.count)
             return subtasks.count
         }
         return tasks.count
@@ -66,11 +70,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell.config(from: tasks[indexPath.row])
         }
-        cell.callback = { [weak self, tableView] string in
-            if let self {
-                self.tasks[indexPath.row].note = string
-                tableView.performBatchUpdates(nil)
-            }
+        cell.callback = { [weak self] task, string in
+            
+            // error: changes are not done - fixed!!!
+            
+            task?.note = string
+            self?.tableView.performBatchUpdates(nil)
+            
         }
         return cell
     }
@@ -87,8 +93,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
                     CoreDataService.shared.delete(tasks[indexPath.row])
                 }
             }
-            print(tasks)
-            tableView.deleteRows(at: [indexPath], with: .left)
+            
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+            
         }
     }
     

@@ -1,0 +1,18 @@
+{
+    "aps" : {
+        "alert" : {
+            "title": "Notification",
+            "subtitle": "New Task",
+            "body": "A new task was added to your list"
+        },
+        "sound": "default",
+        "badge": 0,
+        "thread-id": "addTaskRemotely"
+    },
+    "task" : {
+        "title": "New Task",
+        "note": "Add Note", 
+        "dateOfCreation": "30.11.2022"
+    },
+    "Simulator Target Bundle" : "ua.edu.ukma.dmytrohetman.TODOList"
+}
