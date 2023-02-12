@@ -58,8 +58,7 @@ final class NotificationsService: NSObject {
         
         let content = UNMutableNotificationContent()
         content.title = emptyLocalNotification?["title"] ?? ""
-        content.subtitle = "Subtitle"
-//        content.subtitle = emptyLocalNotification?["subtitle"] ?? ""
+        content.subtitle = emptyLocalNotification?["subtitle"] ?? ""
         content.body = emptyLocalNotification?["body"] ?? ""
         content.sound = .default
         
